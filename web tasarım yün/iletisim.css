@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 110vh;
+}
+
+.main-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 25vw;
+    min-height: 25vh;
+}
+
+.circle-div{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(34, 4, 72);
+    color: white;
+    font-size: 30px;
+    border-radius: 80px;
+}
+
+a{
+    text-decoration: none;
+}    

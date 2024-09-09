@@ -1,0 +1,180 @@
+* {
+    padding: 0;  
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Mulish', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --animation-speed: 300ms;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: rgb(38, 4, 72);
+    border-right: 1px solid rgb(255, 255, 255);
+    transform: translateX(-100%);
+    transition: var(--animation-speed) transform;
+}
+.menu ul li {
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.menu ul li a {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 15px 20px;
+    color: rgb(255, 255, 255);
+}
+.menu ul li a:hover {
+    background-color: rgb(166, 139, 219);
+}
+
+.container {
+    height: 100%;
+    background: rgb(38, 4, 72);
+    transition: var(--animation-speed) transform;
+}
+.container .header {
+    height: 100px;
+    border-bottom: 50px solid rgb(38, 4, 72);
+    display: flex;
+    align-items: center;
+    background: rgb(38, 4, 72);
+    padding: 0 30px;
+}
+.container .actions {
+    margin-left: auto;
+}
+
+
+.hamburger-menu {
+    --height: 15px;
+    --space: calc(var(--height) * 2);
+    --animation-speed: 300ms;
+    display: block;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    width: calc(var(--space) * 5);
+    height: calc(var(--height) + (var(--space) * 0.8));
+    
+}
+.hamburger-menu span,
+.hamburger-menu span::before,
+.hamburger-menu span::after {
+    content: '';
+    display: block;
+    height: var(--height);
+    width: 100%;
+    background: rgb(255, 255, 255);
+}
+.hamburger-menu span {
+    transform: translateY(var(--space));
+    transition: var(--animation-speed) var(--animation-speed) background-color;
+}
+.hamburger-menu span::before {
+    position: absolute;
+    bottom: var(--space);
+    transition: var(--animation-speed) transform, var(--animation-speed) var(--animation-speed) bottom;
+}
+.hamburger-menu span::after {
+    position: absolute;
+    top: var(--space);
+    transition: var(--animation-speed) transform, var(--animation-speed) var(--animation-speed) top;
+}
+
+#menu-toggle {
+    display: none;
+}
+#menu-toggle:checked ~ nav.menu {
+    transform: translateX(0);
+}
+#menu-toggle:checked ~ .container {
+    transform: translateX(300px);
+}
+#menu-toggle:checked ~ .container .backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+#menu-toggle:checked ~ .container .hamburger-menu span {
+    background: transparent;
+    transition: var(--animation-speed) background-color;
+}
+#menu-toggle:checked ~ .container .hamburger-menu span::before {
+    transform: rotate(-45deg);
+    bottom: 0;
+    background-color: #fff;
+    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) bottom;
+}
+#menu-toggle:checked ~ .container .hamburger-menu span::after {
+    transform: rotate(45deg);
+    top: 0;
+    background-color: #fff;
+    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) top;
+}
+    body {
+        background-image: url("ana sayfa fotoğrafları/20362613.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    h1, h2, h4{
+        color: rgb(38, 4, 72);
+    }
+
+    .container {
+        width: 0%;
+        margin:0 auto;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .box {
+        width: 700px;
+        height: 700px;
+        background: transparent;
+        margin: 0px 20px;
+        transition: 0.5s;
+    }
+    
+    .box img {border-radius: 80px;}
+    
+    .box:hover {
+        transform: scale(1.2);
+        background: transparent;
+        z-index: 2;
+    }
+
+    #butonicerik {
+        cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    #butonicerik::after {
+        content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    #renkdegistirmebutonu:hover #butonicerik {
+        padding-right: 25px;
+    }
+    #renkdegistirmebutonu:hover #butonicerik::after{
+        opacity: 1;
+      right: 0;
+    }
+
+    
